@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div >
+        <h2>Background color : <p class="color">color</p></h2>
+        <button type="button" class="btn btn-light" id="btn">click me</button>
+    </div>
+      
+      <!-- javascript -->
+      <script>
+          const btn = document.getElementById('btn');
+          const color = document.querySelector('.color');
+          const colors = ["green", "blue", "red", "black", "pink"];
+          function randomColor()  {
+              return Math.floor(Math.random() * colors.length);
+          }
+          btn.addEventListener('click', changeColor );
+          function changeColor() {
+              const random = randomColor();
+              color.textContent = colors[random];
+              document.body.style.background= colors[random];
+          }
+      </script>
+</body>
+</html>
